@@ -6,6 +6,7 @@ const { ApolloServer, gql } = require("apollo-server");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+// creating new instance of apollo server
 const server = new ApolloServer({
   typeDefs,
   resolvers,
