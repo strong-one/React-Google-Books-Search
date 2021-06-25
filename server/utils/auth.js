@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 
 // set token secret and expiration date
 const secret = "mysecretsshhhhh"; //private key that signs the token and enables the serverify if the token is valid
-const expiration = "2h"; // length of time the token remains valid before expiring
+const expiration = "2h"; // length of time the token remains valid before expiring 15/20 minutes is a better experiation time
 
 module.exports = {
   // function for our authenticated routes
