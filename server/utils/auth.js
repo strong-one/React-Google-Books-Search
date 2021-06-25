@@ -1,10 +1,11 @@
 // - `auth.js`: Update the auth middleware function to work with the GraphQL API.
 
+// bringing jwt from jsonwebtoken library - checks validation of the token using a secret and expiration
 const jwt = require("jsonwebtoken");
 
 // set token secret and expiration date
-const secret = "mysecretsshhhhh";
-const expiration = "2h";
+const secret = "mysecretsshhhhh"; //private key that signs the token and enables the serverify if the token is valid
+const expiration = "2h"; // length of time the token remains valid before expiring
 
 module.exports = {
   // function for our authenticated routes
