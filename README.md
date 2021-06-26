@@ -1,6 +1,6 @@
 # React-Google-Books-Search
 
-![screenshot]()
+![screenshot](img/mainscreen.png)
 [Deployed Site]()
 
 ## Description
