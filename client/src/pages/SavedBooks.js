@@ -7,9 +7,12 @@ import {
   Button,
 } from "react-bootstrap";
 
-import { getMe, deleteBook } from "../utils/API";
+// import { getMe, deleteBook } from "../utils/API";
 import Auth from "../utils/auth";
 import { removeBookId } from "../utils/localStorage";
+import { useQuery, useMutation } from "@apollo/react-hooks";
+import { REMOVE_BOOK } from "../utils/mutations";
+import { GET_ME } from "../utils/queries";
 
 const SavedBooks = () => {
   const [userData, setUserData] = useState({});
@@ -58,12 +61,16 @@ const SavedBooks = () => {
     try {
       const response = await deleteBook(bookId, token);
 
-      if (!response.ok) {
-        throw new Error("something went wrong!");
-      }
+      // if (!response.ok) {
+      //   throw new Error("something went wrong!");
+      // }
 
-      const updatedUser = await response.json();
-      setUserData(updatedUser);
+      // const updatedUser = await response.json();
+      // setUserData(updatedUser);
+      await removeBook({
+        variables: { bookId: bookId },
+      });
+
       // upon success, remove book's id from localStorage
       removeBookId(bookId);
     } catch (err) {
