@@ -10,7 +10,7 @@ import {
 // import { getMe, deleteBook } from "../utils/API";
 import Auth from "../utils/auth";
 import { removeBookId } from "../utils/localStorage";
-import { useQuery, useMutation } from "@apollo/react-hooks";
+import { useQuery, useMutation } from "@apollo/client";
 import { REMOVE_BOOK } from "../utils/mutations";
 import { GET_ME } from "../utils/queries";
 
@@ -84,8 +84,8 @@ const SavedBooks = () => {
     }
   };
 
-  // if data isn't here yet, say so
-  if (!userDataLength) {
+  // if data isn't here yet, let user know, this will render the h2 content on the page.
+  if (loading) {
     return <h2>LOADING...</h2>;
   }
 
