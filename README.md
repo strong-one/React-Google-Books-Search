@@ -13,7 +13,7 @@ The goal of this assignment was to refactor the application from RESTful practic
 
 - Clone repo
 - Install all dependencies
-- Use `npm run develop` to start application on local device
+- Use command `npm run develop` to start application on local device
 
 ## Features
 
